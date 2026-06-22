@@ -195,7 +195,7 @@ document.addEventListener('DOMContentLoaded', () => {
             // ========================================================
             // GOOGLE SHEET INTEGRATION (OPTIONAL)
             // ========================================================
-            const GOOGLE_SHEET_WEB_APP_URL = ""; // DÁN URL WEB APP CỦA GOOGLE APPS SCRIPT VÀO ĐÂY
+            const GOOGLE_SHEET_WEB_APP_URL = "https://script.google.com/macros/s/AKfycbxY1TUbjeaGPutbaTkK5G_a_OSqXNmVHG39De_M3zZx3sshVPuQJNIe8K5f5uFZWnmd/exec"; // DÁN URL WEB APP CỦA GOOGLE APPS SCRIPT VÀO ĐÂY
 
             if (GOOGLE_SHEET_WEB_APP_URL) {
                 const urlEncodedData = new URLSearchParams();
