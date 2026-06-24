@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NoiBai Connect - Taxi Sân Bay Nội Bài <=> Hà Nội | Chỉ Từ 180K Trọn Gói</title>
-    <meta name="description" content="Dịch vụ taxi sân bay Nội Bài đi Hà Nội và ngược lại giá rẻ chỉ từ 180k trọn gói. Đưa đón tận nhà, cam kết đúng giờ bay, không lo trễ chuyến. Lái xe lịch sự, phục vụ 24/7.">
-    <meta name="keywords" content="xe noi bai ha noi, taxi san bay noi bai, xe tien chuyen noi bai, noibai connect, dat xe di noi bai">
+    <title>NoiBai Connect - Taxi Nội Bài & Xe Liên Tỉnh Từ Hà Nội | Từ 180K Trọn Gói</title>
+    <meta name="description" content="Dịch vụ xe đưa đón sân bay Nội Bài và xe liên tỉnh từ Hà Nội đi Hải Phòng, Quảng Ninh, Ninh Bình, Nam Định và các tỉnh lân cận. Giá rẻ trọn gói, đúng giờ, phục vụ 24/7.">
+    <meta name="keywords" content="xe noi bai ha noi, taxi san bay noi bai, xe di hai phong, xe di ninh binh, xe di quang ninh, xe lien tinh ha noi, noibai connect, dat xe di noi bai, xe di nam dinh">
     
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:title" content="NoiBai Connect - Taxi Sân Bay Nội Bài <=> Hà Nội Giá Tốt Nhất">
-    <meta property="og:description" content="Hà Nội đi Nội Bài chỉ 180K, Nội Bài về Hà Nội chỉ từ 230K. Trọn gói cầu đường, xe đời mới sạch sẽ, cam kết đúng giờ bay 100%.">
+    <meta property="og:title" content="NoiBai Connect - Taxi Nội Bài & Xe Liên Tỉnh | Trọn Gói Giá Tốt">
+    <meta property="og:description" content="Xe đưa đón sân bay Nội Bài từ 180K. Xe liên tỉnh Hà Nội đi Hải Phòng, Quảng Ninh, Ninh Bình, Nam Định từ 400K. Xe đời mới, lái xe chuyên nghiệp, đúng giờ 100%.">
     <meta property="og:image" content="assets/noibai_connect_hero.png">
 
     <!-- Google Fonts -->
@@ -42,6 +42,7 @@
             <nav class="nav">
                 <a href="#home" class="nav-link active">Trang Chủ</a>
                 <a href="#services" class="nav-link">Bảng Giá</a>
+                <a href="#inter-province" class="nav-link">Liên Tỉnh</a>
                 <a href="#why-us" class="nav-link">Ưu Điểm</a>
                 <a href="#steps" class="nav-link">Quy Trình</a>
             </nav>
@@ -63,6 +64,7 @@
         <button class="mobile-nav-close"><i class="fa-solid fa-xmark"></i></button>
         <a href="#home" class="mobile-link">Trang Chủ</a>
         <a href="#services" class="mobile-link">Bảng Giá</a>
+        <a href="#inter-province" class="mobile-link">Liên Tỉnh</a>
         <a href="#why-us" class="mobile-link">Ưu Điểm</a>
         <a href="#steps" class="mobile-link">Quy Trình</a>
         <a href="tel:0355146637" class="mobile-call-btn">
@@ -75,10 +77,10 @@
         <div class="hero-bg-overlay"></div>
         <div class="container hero-container">
             <div class="hero-content">
-                <div class="badge">Xe Sân Bay Trọn Gói Giá Rẻ</div>
+                <div class="badge">Xe Sân Bay & Xe Liên Tỉnh Trọn Gói</div>
                 <h1 class="hero-title">
-                    Taxi Nội Bài ⇄ Hà Nội <br>
-                    <span class="highlight">Chỉ Từ 180K Trọn Gói</span>
+                    Taxi Nội Bài & Xe Liên Tỉnh <br>
+                    <span class="highlight">Từ Hà Nội Chỉ Từ 180K</span>
                 </h1>
                 <p class="hero-subtitle">
                     Xe riêng đón tận nhà, đúng giờ 100%. Đã gồm vé cầu đường, delay chờ miễn phí.
@@ -93,116 +95,203 @@
                         <span>Delay chờ miễn phí</span>
                     </div>
                     <div class="hero-feature-item">
-                        <i class="fa-solid fa-shield-cat"></i>
+                        <i class="fa-solid fa-shield-halved"></i>
                         <span>Bảo hiểm hành khách</span>
                     </div>
                 </div>
             </div>
             
+            <!-- 2-Tab Booking Form -->
             <div class="hero-booking-wrapper">
                 <div class="booking-card">
-                    <div class="booking-card-header">
-                        <h3><i class="fa-solid fa-plane-arrival"></i> Đặt Xe Đi Sân Bay</h3>
-                        <p>Nhận ngay báo giá trọn gói - Lái xe đón tận nhà</p>
+                    <!-- Tab Switcher -->
+                    <div class="booking-tabs">
+                        <button class="booking-tab active" id="tab-airport" data-tab="airport">
+                            <i class="fa-solid fa-plane-arrival"></i> Xe Sân Bay
+                        </button>
+                        <button class="booking-tab" id="tab-province" data-tab="province">
+                            <i class="fa-solid fa-road"></i> Xe Liên Tỉnh
+                        </button>
                     </div>
-                    <form id="booking-form" class="booking-form">
-                        <div class="form-group route-inputs">
-                            <div class="input-wrapper">
-                                <label for="pickup"><i class="fa-solid fa-location-dot"></i> Điểm Đi</label>
-                                <select id="pickup" required>
-                                    <option value="Hà Nội" selected>Hà Nội (Nội thành)</option>
-                                    <option value="Sân bay Nội Bài">Sân bay Nội Bài</option>
-                                </select>
+
+                    <!-- TAB 1: Airport Booking -->
+                    <div class="tab-content active" id="content-airport">
+                        <div class="booking-card-header">
+                            <h3><i class="fa-solid fa-plane-arrival"></i> Đặt Xe Đi Sân Bay Nội Bài</h3>
+                            <p>Nhận ngay báo giá trọn gói - Lái xe đón tận nhà</p>
+                        </div>
+                        <form id="booking-form" class="booking-form">
+                            <div class="form-group route-inputs">
+                                <div class="input-wrapper">
+                                    <label for="pickup"><i class="fa-solid fa-location-dot"></i> Điểm Đi</label>
+                                    <select id="pickup" required>
+                                        <option value="Hà Nội" selected>Hà Nội (Nội thành)</option>
+                                        <option value="Sân bay Nội Bài">Sân bay Nội Bài</option>
+                                    </select>
+                                </div>
+                                <button type="button" class="btn-swap-route" id="swap-route" title="Đổi chiều đi/đến">
+                                    <i class="fa-solid fa-arrow-right-arrow-left"></i>
+                                </button>
+                                <div class="input-wrapper">
+                                    <label for="dropoff"><i class="fa-solid fa-location-arrow"></i> Điểm Đến</label>
+                                    <select id="dropoff" required>
+                                        <option value="Sân bay Nội Bài" selected>Sân bay Nội Bài</option>
+                                        <option value="Hà Nội">Hà Nội (Nội thành)</option>
+                                    </select>
+                                </div>
                             </div>
-                            <button type="button" class="btn-swap-route" id="swap-route" title="Đổi chiều đi/đến">
-                                <i class="fa-solid fa-arrow-right-arrow-left"></i>
+
+                            <div class="form-row">
+                                <div class="form-group width-50">
+                                    <label for="service-type"><i class="fa-solid fa-car-side"></i> Loại Xe</label>
+                                    <select id="service-type" required>
+                                        <option value="sedan-4" selected>Xe 4 chỗ (Nhỏ gọn)</option>
+                                        <option value="sedan-5">Xe 5 chỗ (Cốp rộng)</option>
+                                        <option value="suv-7">Xe 7 chỗ (SUV rộng)</option>
+                                        <option value="transit-16">Xe 16 chỗ (Transit)</option>
+                                    </select>
+                                </div>
+                                <div class="form-group width-50">
+                                    <label for="flight-number"><i class="fa-solid fa-ticket"></i> Mã Chuyến Bay</label>
+                                    <input type="text" id="flight-number" placeholder="Ví dụ: VN213 (Không bắt buộc)">
+                                </div>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group width-50">
+                                    <label for="travel-date"><i class="fa-solid fa-calendar-days"></i> Ngày Đi</label>
+                                    <input type="date" id="travel-date" required>
+                                </div>
+                                <div class="form-group width-50">
+                                    <label for="travel-time"><i class="fa-solid fa-clock"></i> Giờ Đi</label>
+                                    <input type="time" id="travel-time" required>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="passenger-name"><i class="fa-solid fa-user"></i> Họ & Tên</label>
+                                <input type="text" id="passenger-name" placeholder="Nhập tên của bạn" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="passenger-phone"><i class="fa-solid fa-phone"></i> Số Điện Thoại</label>
+                                <input type="tel" id="passenger-phone" placeholder="Nhập số điện thoại liên hệ" required>
+                            </div>
+
+                            <div class="price-estimation" id="price-box">
+                                <span>Giá trọn gói dự kiến: </span>
+                                <strong class="estimated-price" id="estimated-price">180.000đ</strong>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary btn-submit-booking">
+                                <i class="fa-solid fa-check"></i> ĐẶT XE NGAY
                             </button>
-                            <div class="input-wrapper">
-                                <label for="dropoff"><i class="fa-solid fa-location-arrow"></i> Điểm Đến</label>
-                                <select id="dropoff" required>
-                                    <option value="Sân bay Nội Bài" selected>Sân bay Nội Bài</option>
+                        </form>
+                    </div>
+
+                    <!-- TAB 2: Inter-Province Booking -->
+                    <div class="tab-content" id="content-province">
+                        <div class="booking-card-header">
+                            <h3><i class="fa-solid fa-road"></i> Đặt Xe Liên Tỉnh Từ Hà Nội</h3>
+                            <p>Xe riêng đón tận nơi - Giá cố định, không phát sinh</p>
+                        </div>
+                        <form id="province-form" class="booking-form">
+                            <div class="form-group">
+                                <label for="province-from"><i class="fa-solid fa-location-dot"></i> Điểm Đi</label>
+                                <select id="province-from" disabled>
                                     <option value="Hà Nội">Hà Nội (Nội thành)</option>
                                 </select>
                             </div>
-                        </div>
 
-                        <div class="form-row">
-                            <div class="form-group width-50">
-                                <label for="service-type"><i class="fa-solid fa-car-side"></i> Loại Xe</label>
-                                <select id="service-type" required>
-                                    <option value="sedan-4" selected>Xe 4 chỗ (Nhỏ gọn)</option>
-                                    <option value="sedan-5">Xe 5 chỗ (Cốp rộng)</option>
-                                    <option value="suv-7">Xe 7 chỗ (SUV rộng)</option>
-                                    <option value="transit-16">Xe 16 chỗ (Transit)</option>
+                            <div class="form-group">
+                                <label for="province-to"><i class="fa-solid fa-location-arrow"></i> Tỉnh Đến</label>
+                                <select id="province-to" required>
+                                    <option value="" disabled selected>-- Chọn tỉnh thành --</option>
+                                    <option value="Hải Phòng" data-price="900000" data-km="120">🌊 Hải Phòng (~120km) - Từ 900K</option>
+                                    <option value="Quảng Ninh" data-price="1100000" data-km="160">⛰️ Quảng Ninh (~160km) - Từ 1.100K</option>
+                                    <option value="Nam Định" data-price="900000" data-km="90">🌾 Nam Định (~90km) - Từ 900K</option>
+                                    <option value="Ninh Bình" data-price="900000" data-km="95">🏯 Ninh Bình (~95km) - Từ 900K</option>
+                                    <option value="Thái Bình" data-price="700000" data-km="110">🌻 Thái Bình (~110km) - Từ 700K</option>
+                                    <option value="Thái Nguyên" data-price="600000" data-km="80">🍵 Thái Nguyên (~80km) - Từ 600K</option>
+                                    <option value="Hòa Bình" data-price="550000" data-km="75">🏔️ Hòa Bình (~75km) - Từ 550K</option>
+                                    <option value="Hải Dương" data-price="500000" data-km="60">🏭 Hải Dương (~60km) - Từ 500K</option>
+                                    <option value="Hà Nam" data-price="500000" data-km="60">🌿 Hà Nam (~60km) - Từ 500K</option>
+                                    <option value="Bắc Giang" data-price="450000" data-km="50">🌲 Bắc Giang (~50km) - Từ 450K</option>
+                                    <option value="Vĩnh Phúc" data-price="450000" data-km="50">🌺 Vĩnh Phúc (~50km) - Từ 450K</option>
+                                    <option value="Bắc Ninh" data-price="400000" data-km="30">🎶 Bắc Ninh (~30km) - Từ 400K</option>
+                                    <option value="Hưng Yên" data-price="400000" data-km="50">🍊 Hưng Yên (~50km) - Từ 400K</option>
                                 </select>
                             </div>
-                            <div class="form-group width-50">
-                                <label for="flight-number"><i class="fa-solid fa-ticket"></i> Mã Chuyến Bay</label>
-                                <input type="text" id="flight-number" placeholder="Ví dụ: VN213 (Không bắt buộc)">
+
+                            <div class="form-row">
+                                <div class="form-group width-50">
+                                    <label for="province-car-type"><i class="fa-solid fa-car-side"></i> Loại Xe</label>
+                                    <select id="province-car-type" required>
+                                        <option value="sedan-4" selected>Xe 4 chỗ (Nhỏ gọn)</option>
+                                        <option value="sedan-5">Xe 5 chỗ (Cốp rộng)</option>
+                                        <option value="suv-7">Xe 7 chỗ (SUV rộng)</option>
+                                        <option value="transit-16">Xe 16 chỗ (Transit)</option>
+                                    </select>
+                                </div>
+                                <div class="form-group width-50">
+                                    <label for="province-date"><i class="fa-solid fa-calendar-days"></i> Ngày Đi</label>
+                                    <input type="date" id="province-date" required>
+                                </div>
                             </div>
-                        </div>
 
-                        <div class="form-row">
-                            <div class="form-group width-50">
-                                <label for="travel-date"><i class="fa-solid fa-calendar-days"></i> Ngày Đi</label>
-                                <input type="date" id="travel-date" required>
+                            <div class="form-row">
+                                <div class="form-group width-50">
+                                    <label for="province-time"><i class="fa-solid fa-clock"></i> Giờ Đi</label>
+                                    <input type="time" id="province-time" required>
+                                </div>
+                                <div class="form-group width-50">
+                                    <label for="province-note"><i class="fa-solid fa-note-sticky"></i> Ghi chú</label>
+                                    <input type="text" id="province-note" placeholder="Địa chỉ, yêu cầu cụ thể...">
+                                </div>
                             </div>
-                            <div class="form-group width-50">
-                                <label for="travel-time"><i class="fa-solid fa-clock"></i> Giờ Đi</label>
-                                <input type="time" id="travel-time" required>
+
+                            <div class="form-group">
+                                <label for="province-name"><i class="fa-solid fa-user"></i> Họ & Tên</label>
+                                <input type="text" id="province-name" placeholder="Nhập tên của bạn" required>
                             </div>
-                        </div>
 
-                        <div class="form-group">
-                            <label for="passenger-name"><i class="fa-solid fa-user"></i> Họ & Tên</label>
-                            <input type="text" id="passenger-name" placeholder="Nhập tên của bạn" required>
-                        </div>
+                            <div class="form-group">
+                                <label for="province-phone"><i class="fa-solid fa-phone"></i> Số Điện Thoại</label>
+                                <input type="tel" id="province-phone" placeholder="Nhập số điện thoại liên hệ" required>
+                            </div>
 
-                        <div class="form-group">
-                            <label for="passenger-phone"><i class="fa-solid fa-phone"></i> Số Điện Thoại</label>
-                            <input type="tel" id="passenger-phone" placeholder="Nhập số điện thoại liên hệ" required>
-                        </div>
+                            <div class="price-estimation" id="province-price-box">
+                                <span>Giá trọn gói dự kiến: </span>
+                                <strong class="estimated-price" id="province-estimated-price">-- Chọn tỉnh --</strong>
+                            </div>
 
-                        <div class="price-estimation" id="price-box">
-                            <span>Giá trọn gói dự kiến: </span>
-                            <strong class="estimated-price" id="estimated-price">180.000đ</strong>
-                        </div>
-
-                        <button type="submit" class="btn btn-primary btn-submit-booking">
-                            <i class="fa-solid fa-check"></i> ĐẶT XE NGAY
-                        </button>
-                    </form>
+                            <button type="submit" class="btn btn-primary btn-submit-booking">
+                                <i class="fa-solid fa-check"></i> ĐẶT XE NGAY
+                            </button>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Services & Pricing Section -->
+    <!-- Services & Airport Pricing Section -->
     <section id="services" class="services section-padding">
         <div class="container">
             <div class="section-header">
-                <span class="sub-title">BẢNG GIÁ DỊCH VỤ</span>
-                <h2>Giá Vé Trọn Gói - Đã Gồm Vé Cầu Đường</h2>
+                <span class="sub-title">BẢNG GIÁ SÂN BAY</span>
+                <h2>Taxi Nội Bài ⇄ Hà Nội - Trọn Gói Cầu Đường</h2>
                 <p>Bảng giá taxi sân bay Nội Bài áp dụng cho các quận nội thành Hà Nội. Cam kết không phát sinh chi phí ẩn.</p>
             </div>
             
             <div class="pricing-grid">
-                <!-- Card 1 -->
                 <div class="pricing-card">
-                    <div class="pricing-icon">
-                        <i class="fa-solid fa-car-rear"></i>
-                    </div>
+                    <div class="pricing-icon"><i class="fa-solid fa-car-rear"></i></div>
                     <h3>Xe 4 Chỗ Nhỏ Gọn</h3>
-                    <p class="pricing-desc">Phù hợp cho cá nhân hoặc cặp đôi đi ít hành lý (Dòng xe: Kia Morning, Hyundai i10, Toyota Wigo...).</p>
+                    <p class="pricing-desc">Phù hợp cho cá nhân hoặc cặp đôi đi ít hành lý (Kia Morning, Hyundai i10, Toyota Wigo...).</p>
                     <div class="pricing-routes">
-                        <div class="route-price-item">
-                            <span>Hà Nội ➔ Nội Bài:</span>
-                            <strong>180.000đ</strong>
-                        </div>
-                        <div class="route-price-item">
-                            <span>Nội Bài ➔ Hà Nội:</span>
-                            <strong>230.000đ</strong>
-                        </div>
+                        <div class="route-price-item"><span>Hà Nội ➔ Nội Bài:</span><strong>180.000đ</strong></div>
+                        <div class="route-price-item"><span>Nội Bài ➔ Hà Nội:</span><strong>230.000đ</strong></div>
                     </div>
                     <ul class="pricing-features">
                         <li><i class="fa-solid fa-check"></i> Đưa đón tận nhà</li>
@@ -212,23 +301,14 @@
                     <a href="#home" class="btn btn-secondary btn-pricing-select" data-type="sedan-4">Đặt Xe 4 Chỗ</a>
                 </div>
 
-                <!-- Card 2 -->
                 <div class="pricing-card featured">
                     <div class="pricing-card-badge">Cốp Rộng Rãi</div>
-                    <div class="pricing-icon">
-                        <i class="fa-solid fa-car"></i>
-                    </div>
+                    <div class="pricing-icon"><i class="fa-solid fa-car"></i></div>
                     <h3>Xe 5 Chỗ Cốp Rộng</h3>
-                    <p class="pricing-desc">Dành cho nhóm 2-3 người mang theo 2-3 vali lớn hành lý ký gửi (Dòng xe: Toyota Vios, Honda City, VinFast Sedan...).</p>
+                    <p class="pricing-desc">Dành cho nhóm 2-3 người mang theo 2-3 vali lớn (Toyota Vios, Honda City, VinFast Sedan...).</p>
                     <div class="pricing-routes">
-                        <div class="route-price-item">
-                            <span>Hà Nội ➔ Nội Bài:</span>
-                            <strong>200.000đ</strong>
-                        </div>
-                        <div class="route-price-item">
-                            <span>Nội Bài ➔ Hà Nội:</span>
-                            <strong>250.000đ</strong>
-                        </div>
+                        <div class="route-price-item"><span>Hà Nội ➔ Nội Bài:</span><strong>200.000đ</strong></div>
+                        <div class="route-price-item"><span>Nội Bài ➔ Hà Nội:</span><strong>250.000đ</strong></div>
                     </div>
                     <ul class="pricing-features">
                         <li><i class="fa-solid fa-check"></i> Xe sedan cốp rộng chứa nhiều đồ</li>
@@ -238,22 +318,13 @@
                     <a href="#home" class="btn btn-primary btn-pricing-select" data-type="sedan-5">Đặt Xe 5 Chỗ</a>
                 </div>
 
-                <!-- Card 3 -->
                 <div class="pricing-card">
-                    <div class="pricing-icon">
-                        <i class="fa-solid fa-van-shuttle"></i>
-                    </div>
+                    <div class="pricing-icon"><i class="fa-solid fa-van-shuttle"></i></div>
                     <h3>Xe 7 Chỗ SUV Rộng</h3>
-                    <p class="pricing-desc">Không gian rộng rãi cho đại gia đình từ 3-6 người, cốp cực rộng (Dòng xe: Toyota Innova, Mitsubishi Xpander, Fortuner...).</p>
+                    <p class="pricing-desc">Không gian rộng rãi cho đại gia đình từ 3-6 người, cốp cực rộng (Toyota Innova, Xpander, Fortuner...).</p>
                     <div class="pricing-routes">
-                        <div class="route-price-item">
-                            <span>Hà Nội ➔ Nội Bài:</span>
-                            <strong>250.000đ</strong>
-                        </div>
-                        <div class="route-price-item">
-                            <span>Nội Bài ➔ Hà Nội:</span>
-                            <strong>300.000đ</strong>
-                        </div>
+                        <div class="route-price-item"><span>Hà Nội ➔ Nội Bài:</span><strong>250.000đ</strong></div>
+                        <div class="route-price-item"><span>Nội Bài ➔ Hà Nội:</span><strong>300.000đ</strong></div>
                     </div>
                     <ul class="pricing-features">
                         <li><i class="fa-solid fa-check"></i> Xe 7 chỗ SUV cốp siêu rộng</li>
@@ -263,22 +334,13 @@
                     <a href="#home" class="btn btn-secondary btn-pricing-select" data-type="suv-7">Đặt Xe 7 Chỗ</a>
                 </div>
 
-                <!-- Card 4 -->
                 <div class="pricing-card">
-                    <div class="pricing-icon">
-                        <i class="fa-solid fa-bus"></i>
-                    </div>
+                    <div class="pricing-icon"><i class="fa-solid fa-bus"></i></div>
                     <h3>Xe 16 Chỗ Transit</h3>
-                    <p class="pricing-desc">Lựa chọn lý tưởng cho các đoàn đi tour, đoàn cơ quan hay đám cưới, gia đình đông hành lý (Dòng xe: Ford Transit, Hyundai Solati...).</p>
+                    <p class="pricing-desc">Lý tưởng cho các đoàn đi tour, đoàn cơ quan hay gia đình đông người (Ford Transit, Hyundai Solati...).</p>
                     <div class="pricing-routes">
-                        <div class="route-price-item">
-                            <span>Hà Nội ➔ Nội Bài:</span>
-                            <strong>450.000đ</strong>
-                        </div>
-                        <div class="route-price-item">
-                            <span>Nội Bài ➔ Hà Nội:</span>
-                            <strong>500.000đ</strong>
-                        </div>
+                        <div class="route-price-item"><span>Hà Nội ➔ Nội Bài:</span><strong>450.000đ</strong></div>
+                        <div class="route-price-item"><span>Nội Bài ➔ Hà Nội:</span><strong>500.000đ</strong></div>
                     </div>
                     <ul class="pricing-features">
                         <li><i class="fa-solid fa-check"></i> Xe 16 chỗ khoang hành khách rộng</li>
@@ -291,44 +353,228 @@
         </div>
     </section>
 
+    <!-- ===== INTER-PROVINCE SECTION ===== -->
+    <section id="inter-province" class="inter-province section-padding bg-dark-navy">
+        <div class="container">
+            <div class="section-header">
+                <span class="sub-title light">XE LIÊN TỈNH TỪ HÀ NỘI</span>
+                <h2 class="text-white">Tuyến Đường Dài Phổ Biến</h2>
+                <p class="text-light-gray">Xe riêng từ Hà Nội đến các tỉnh thành lân cận. Giá cố định trọn gói, không phát sinh thêm.</p>
+            </div>
+
+            <!-- Featured 4 Routes -->
+            <div class="province-featured-grid">
+                <div class="province-route-card">
+                    <div class="route-card-icon">🌊</div>
+                    <div class="route-card-dest">Hải Phòng</div>
+                    <div class="route-card-km">~120 km</div>
+                    <div class="route-card-price">Từ <strong>900K</strong></div>
+                    <ul class="route-card-highlights">
+                        <li><i class="fa-solid fa-check"></i> Biển Đồ Sơn, Cát Bà</li>
+                        <li><i class="fa-solid fa-check"></i> Khu CN Hải Phòng</li>
+                        <li><i class="fa-solid fa-check"></i> Cảng Hải Phòng</li>
+                    </ul>
+                    <button class="btn btn-primary btn-sm province-book-btn" data-province="Hải Phòng" data-price="900000">Đặt Ngay</button>
+                </div>
+
+                <div class="province-route-card">
+                    <div class="route-card-icon">⛰️</div>
+                    <div class="route-card-dest">Quảng Ninh</div>
+                    <div class="route-card-km">~160 km</div>
+                    <div class="route-card-price">Từ <strong>1.100K</strong></div>
+                    <ul class="route-card-highlights">
+                        <li><i class="fa-solid fa-check"></i> Vịnh Hạ Long</li>
+                        <li><i class="fa-solid fa-check"></i> TP. Hạ Long, Cẩm Phả</li>
+                        <li><i class="fa-solid fa-check"></i> Móng Cái, Vân Đồn</li>
+                    </ul>
+                    <button class="btn btn-primary btn-sm province-book-btn" data-province="Quảng Ninh" data-price="1200000">Đặt Ngay</button>
+                </div>
+
+                <div class="province-route-card">
+                    <div class="route-card-icon">🌾</div>
+                    <div class="route-card-dest">Nam Định</div>
+                    <div class="route-card-km">~90 km</div>
+                    <div class="route-card-price">Từ <strong>900K</strong></div>
+                    <ul class="route-card-highlights">
+                        <li><i class="fa-solid fa-check"></i> TP. Nam Định</li>
+                        <li><i class="fa-solid fa-check"></i> Chùa Keo, Phủ Dầy</li>
+                        <li><i class="fa-solid fa-check"></i> Biển Thịnh Long</li>
+                    </ul>
+                    <button class="btn btn-primary btn-sm province-book-btn" data-province="Nam Định" data-price="900000">Đặt Ngay</button>
+                </div>
+
+                <div class="province-route-card">
+                    <div class="route-card-icon">🏯</div>
+                    <div class="route-card-dest">Ninh Bình</div>
+                    <div class="route-card-km">~95 km</div>
+                    <div class="route-card-price">Từ <strong>900K</strong></div>
+                    <ul class="route-card-highlights">
+                        <li><i class="fa-solid fa-check"></i> Tràng An, Bích Động</li>
+                        <li><i class="fa-solid fa-check"></i> Cố đô Hoa Lư</li>
+                        <li><i class="fa-solid fa-check"></i> Tam Cốc - Bích Động</li>
+                    </ul>
+                    <button class="btn btn-primary btn-sm province-book-btn" data-province="Ninh Bình" data-price="900000">Đặt Ngay</button>
+                </div>
+            </div>
+
+            <!-- Full Province Pricing Table -->
+            <div class="province-table-wrapper">
+                <h3 class="table-title text-white"><i class="fa-solid fa-table-list"></i> Bảng Giá Đầy Đủ Xe Liên Tỉnh</h3>
+                <div class="province-table-scroll">
+                    <table class="province-table">
+                        <thead>
+                            <tr>
+                                <th>Tỉnh Thành</th>
+                                <th>Khoảng Cách</th>
+                                <th>Xe 4/5 Chỗ</th>
+                                <th>Xe 7 Chỗ</th>
+                                <th>Xe 16 Chỗ</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="highlight-row">
+                                <td><span class="prov-icon">🌊</span> Hải Phòng</td>
+                                <td>~120 km</td>
+                                <td><strong class="price-tag">900.000đ</strong></td>
+                                <td>1.000.000đ</td>
+                                <td>1.320.000đ</td>
+                                <td><button class="btn-table-book province-book-btn" data-province="Hải Phòng" data-price="900000">Đặt xe</button></td>
+                            </tr>
+                            <tr class="highlight-row">
+                                <td><span class="prov-icon">⛰️</span> Quảng Ninh</td>
+                                <td>~160 km</td>
+                                <td><strong class="price-tag">1.100.000đ</strong></td>
+                                <td>1.200.000đ</td>
+                                <td>1.760.000đ</td>
+                                <td><button class="btn-table-book province-book-btn" data-province="Quảng Ninh" data-price="1100000">Đặt xe</button></td>
+                            </tr>
+                            <tr class="highlight-row">
+                                <td><span class="prov-icon">🌾</span> Nam Định</td>
+                                <td>~90 km</td>
+                                <td><strong class="price-tag">900.000đ</strong></td>
+                                <td>1.000.000đ</td>
+                                <td>990.000đ</td>
+                                <td><button class="btn-table-book province-book-btn" data-province="Nam Định" data-price="900000">Đặt xe</button></td>
+                            </tr>
+                            <tr class="highlight-row">
+                                <td><span class="prov-icon">🏯</span> Ninh Bình</td>
+                                <td>~95 km</td>
+                                <td><strong class="price-tag">900.000đ</strong></td>
+                                <td>1.000.000đ</td>
+                                <td>1.045.000đ</td>
+                                <td><button class="btn-table-book province-book-btn" data-province="Ninh Bình" data-price="900000">Đặt xe</button></td>
+                            </tr>
+                            <tr>
+                                <td><span class="prov-icon">🌻</span> Thái Bình</td>
+                                <td>~110 km</td>
+                                <td><strong class="price-tag">700.000đ</strong></td>
+                                <td>800.000đ</td>
+                                <td>1.210.000đ</td>
+                                <td><button class="btn-table-book province-book-btn" data-province="Thái Bình" data-price="700000">Đặt xe</button></td>
+                            </tr>
+                            <tr>
+                                <td><span class="prov-icon">🍵</span> Thái Nguyên</td>
+                                <td>~80 km</td>
+                                <td><strong class="price-tag">600.000đ</strong></td>
+                                <td>700.000đ</td>
+                                <td>880.000đ</td>
+                                <td><button class="btn-table-book province-book-btn" data-province="Thái Nguyên" data-price="600000">Đặt xe</button></td>
+                            </tr>
+                            <tr>
+                                <td><span class="prov-icon">🏔️</span> Hòa Bình</td>
+                                <td>~75 km</td>
+                                <td><strong class="price-tag">550.000đ</strong></td>
+                                <td>650.000đ</td>
+                                <td>825.000đ</td>
+                                <td><button class="btn-table-book province-book-btn" data-province="Hòa Bình" data-price="550000">Đặt xe</button></td>
+                            </tr>
+                            <tr>
+                                <td><span class="prov-icon">🏭</span> Hải Dương</td>
+                                <td>~60 km</td>
+                                <td><strong class="price-tag">500.000đ</strong></td>
+                                <td>600.000đ</td>
+                                <td>660.000đ</td>
+                                <td><button class="btn-table-book province-book-btn" data-province="Hải Dương" data-price="500000">Đặt xe</button></td>
+                            </tr>
+                            <tr>
+                                <td><span class="prov-icon">🌿</span> Hà Nam</td>
+                                <td>~60 km</td>
+                                <td><strong class="price-tag">500.000đ</strong></td>
+                                <td>600.000đ</td>
+                                <td>660.000đ</td>
+                                <td><button class="btn-table-book province-book-btn" data-province="Hà Nam" data-price="500000">Đặt xe</button></td>
+                            </tr>
+                            <tr>
+                                <td><span class="prov-icon">🌲</span> Bắc Giang</td>
+                                <td>~50 km</td>
+                                <td><strong class="price-tag">450.000đ</strong></td>
+                                <td>550.000đ</td>
+                                <td>550.000đ</td>
+                                <td><button class="btn-table-book province-book-btn" data-province="Bắc Giang" data-price="450000">Đặt xe</button></td>
+                            </tr>
+                            <tr>
+                                <td><span class="prov-icon">🌺</span> Vĩnh Phúc</td>
+                                <td>~50 km</td>
+                                <td><strong class="price-tag">450.000đ</strong></td>
+                                <td>550.000đ</td>
+                                <td>550.000đ</td>
+                                <td><button class="btn-table-book province-book-btn" data-province="Vĩnh Phúc" data-price="450000">Đặt xe</button></td>
+                            </tr>
+                            <tr>
+                                <td><span class="prov-icon">🎶</span> Bắc Ninh</td>
+                                <td>~30 km</td>
+                                <td><strong class="price-tag">400.000đ</strong></td>
+                                <td>500.000đ</td>
+                                <td>330.000đ</td>
+                                <td><button class="btn-table-book province-book-btn" data-province="Bắc Ninh" data-price="400000">Đặt xe</button></td>
+                            </tr>
+                            <tr>
+                                <td><span class="prov-icon">🍊</span> Hưng Yên</td>
+                                <td>~50 km</td>
+                                <td><strong class="price-tag">400.000đ</strong></td>
+                                <td>500.000đ</td>
+                                <td>550.000đ</td>
+                                <td><button class="btn-table-book province-book-btn" data-province="Hưng Yên" data-price="400000">Đặt xe</button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <p class="table-note"><i class="fa-solid fa-circle-info"></i> Giá xe 7 chỗ và 16 chỗ là ước tính. Liên hệ hotline <strong>035.514.6637</strong> để được báo giá chính xác theo yêu cầu cụ thể.</p>
+            </div>
+        </div>
+    </section>
+
     <!-- Why Choose Us Section -->
     <section id="why-us" class="why-us section-padding bg-light">
         <div class="container">
             <div class="section-header">
                 <span class="sub-title">ƯU ĐIỂM DỊCH VỤ</span>
                 <h2>Tại Sao Nên Đặt Xe Tại NoiBai Connect?</h2>
-                <p>Chúng tôi mang lại sự an tâm tuyệt đối trên mỗi hành trình ra/vào sân bay của bạn.</p>
+                <p>Chúng tôi mang lại sự an tâm tuyệt đối trên mỗi hành trình sân bay và liên tỉnh.</p>
             </div>
             
             <div class="why-us-grid">
                 <div class="why-card">
-                    <div class="why-icon-box bg-blue">
-                        <i class="fa-solid fa-clock"></i>
-                    </div>
+                    <div class="why-icon-box bg-blue"><i class="fa-solid fa-clock"></i></div>
                     <h4>Đúng Giờ 100%</h4>
-                    <p>Cam kết lái xe đến đón đúng giờ hẹn. Đảm bảo lịch trình bay của quý khách diễn ra suôn sẻ, không trễ giờ check-in.</p>
+                    <p>Cam kết lái xe đến đón đúng giờ hẹn. Đảm bảo lịch trình bay và lịch trình cá nhân của quý khách diễn ra suôn sẻ.</p>
                 </div>
                 
                 <div class="why-card">
-                    <div class="why-icon-box bg-orange">
-                        <i class="fa-solid fa-ticket"></i>
-                    </div>
+                    <div class="why-icon-box bg-orange"><i class="fa-solid fa-ticket"></i></div>
                     <h4>Delay Không Lo Chờ Phí</h4>
-                    <p>Nếu chuyến bay bị delay, chỉ cần cung cấp mã chuyến bay, hệ thống sẽ tự động cập nhật giờ đón. Lái xe vẫn đợi bạn hoàn toàn miễn phí.</p>
+                    <p>Nếu chuyến bay bị delay, chỉ cần cung cấp mã chuyến bay, hệ thống sẽ tự động cập nhật giờ đón. Lái xe vẫn đợi miễn phí.</p>
                 </div>
                 
                 <div class="why-card">
-                    <div class="why-icon-box bg-green">
-                        <i class="fa-solid fa-wallet"></i>
-                    </div>
+                    <div class="why-icon-box bg-green"><i class="fa-solid fa-wallet"></i></div>
                     <h4>Giá Trọn Gói Minh Bạch</h4>
-                    <p>Mức giá niêm yết đã bao gồm chi phí vé cầu đường ra vào sân bay Nội Bài. Tuyệt đối không phụ thu thêm bất kỳ chi phí ẩn nào.</p>
+                    <p>Mức giá niêm yết đã bao gồm chi phí cầu đường và hầm đường bộ. Tuyệt đối không phụ thu thêm bất kỳ chi phí ẩn nào.</p>
                 </div>
 
                 <div class="why-card">
-                    <div class="why-icon-box bg-gold">
-                        <i class="fa-solid fa-user-shield"></i>
-                    </div>
+                    <div class="why-icon-box bg-gold"><i class="fa-solid fa-user-shield"></i></div>
                     <h4>Dàn Xe Đời Mới & Sạch Sẽ</h4>
                     <p>Xe đời mới, được vệ sinh khử khuẩn trước mỗi chuyến đi. Lái xe lịch sự, lái xe an toàn, không phóng nhanh vượt ẩu.</p>
                 </div>
@@ -348,29 +594,23 @@
             <div class="steps-grid">
                 <div class="step-item">
                     <div class="step-number">01</div>
-                    <div class="step-icon">
-                        <i class="fa-solid fa-keyboard"></i>
-                    </div>
+                    <div class="step-icon"><i class="fa-solid fa-keyboard"></i></div>
                     <h4>1. Điền Thông Tin</h4>
-                    <p>Nhập điểm đi/đến, ngày giờ bay, mã chuyến bay và số điện thoại của bạn vào form.</p>
+                    <p>Nhập điểm đi/đến, ngày giờ, loại xe và số điện thoại. Chọn tab phù hợp: Xe Sân Bay hoặc Xe Liên Tỉnh.</p>
                 </div>
                 
                 <div class="step-item">
                     <div class="step-number">02</div>
-                    <div class="step-icon">
-                        <i class="fa-solid fa-phone-volume"></i>
-                    </div>
+                    <div class="step-icon"><i class="fa-solid fa-phone-volume"></i></div>
                     <h4>2. Nhận Điện Xác Nhận</h4>
-                    <p>Tổng đài viên liên hệ lại sau 5 phút để xác nhận lại lịch trình và báo tên tài xế.</p>
+                    <p>Tổng đài viên liên hệ lại sau 5 phút để xác nhận lại lịch trình và báo tên tài xế, biển số xe.</p>
                 </div>
                 
                 <div class="step-item">
                     <div class="step-number">03</div>
-                    <div class="step-icon">
-                        <i class="fa-solid fa-suitcase"></i>
-                    </div>
+                    <div class="step-icon"><i class="fa-solid fa-suitcase"></i></div>
                     <h4>3. Lên Xe & Khởi Hành</h4>
-                    <p>Tài xế đến đón tận nhà trước giờ đi 15 phút, xếp hành lý và đưa bạn đến sân bay an toàn.</p>
+                    <p>Tài xế đến đón tận nhà trước giờ đi 15 phút, xếp hành lý và đưa bạn đến nơi an toàn, đúng giờ.</p>
                 </div>
             </div>
         </div>
@@ -393,10 +633,7 @@
                     <p class="comment">"Hôm trước bay chuyến muộn từ Sài Gòn ra Nội Bài bị delay mất 2 tiếng. Rất lo xe không chờ nhưng nhờ nhập mã chuyến bay trên web, tài xế vẫn nhiệt tình đứng đợi ở sảnh. Rất hài lòng!"</p>
                     <div class="client-info">
                         <div class="client-avatar bg-blue-light">T</div>
-                        <div>
-                            <h5>Chị Minh Trang</h5>
-                            <span>Trưởng phòng nhân sự</span>
-                        </div>
+                        <div><h5>Chị Minh Trang</h5><span>Trưởng phòng nhân sự</span></div>
                     </div>
                 </div>
 
@@ -404,13 +641,10 @@
                     <div class="stars">
                         <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
                     </div>
-                    <p class="comment">"Gia đình tôi 5 người kèm theo rất nhiều hành lý ký gửi. Đặt xe 7 chỗ SUV cốp rộng rãi đi cực kỳ êm. Lái xe lịch sự, nhiệt tình bê xếp đồ đạc phụ gia đình."</p>
+                    <p class="comment">"Đặt xe 7 chỗ đi Ninh Bình cả gia đình 6 người. Xe sạch, lái xe biết đường, chở chúng tôi tận nơi ở Tràng An. Giá cố định không lo bị tính thêm. Sẽ đặt lại cho chuyến sau!"</p>
                     <div class="client-info">
                         <div class="client-avatar bg-red-light">H</div>
-                        <div>
-                            <h5>Anh Hoàng Nam</h5>
-                            <span>Chủ doanh nghiệp</span>
-                        </div>
+                        <div><h5>Anh Hoàng Nam</h5><span>Chủ doanh nghiệp</span></div>
                     </div>
                 </div>
 
@@ -418,13 +652,10 @@
                     <div class="stars">
                         <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
                     </div>
-                    <p class="comment">"Giá rẻ trọn gói 180K đã gồm phí cầu đường là quá tốt rồi. Lái xe đón tận nhà từ 4 giờ sáng rất đúng hẹn, xe i10 sạch sẽ không mùi hôi. Sẽ ủng hộ lâu dài."</p>
+                    <p class="comment">"Giá rẻ trọn gói 180K đã gồm phí cầu đường là quá tốt. Lái xe đón tận nhà từ 4 giờ sáng rất đúng hẹn, xe sạch sẽ không mùi hôi. Sẽ ủng hộ lâu dài."</p>
                     <div class="client-info">
                         <div class="client-avatar bg-green-light">Q</div>
-                        <div>
-                            <h5>Anh Quốc Trung</h5>
-                            <span>Lập trình viên</span>
-                        </div>
+                        <div><h5>Anh Quốc Trung</h5><span>Lập trình viên</span></div>
                     </div>
                 </div>
             </div>
@@ -436,15 +667,13 @@
         <div class="container footer-container">
             <div class="footer-col brand-col">
                 <a href="#" class="logo footer-logo">
-                    <div class="logo-icon">
-                        <i class="fa-solid fa-plane-departure"></i>
-                    </div>
+                    <div class="logo-icon"><i class="fa-solid fa-plane-departure"></i></div>
                     <div class="logo-text text-white">
                         <span class="brand-name">NoiBai</span>
                         <span class="brand-sub text-gray">Connect</span>
                     </div>
                 </a>
-                <p class="footer-desc">Đơn vị cung cấp dịch vụ taxi sân bay Nội Bài đi Hà Nội chất lượng cao, trọn gói giá rẻ, uy tín và chuyên nghiệp.</p>
+                <p class="footer-desc">Đơn vị cung cấp dịch vụ taxi sân bay Nội Bài và xe liên tỉnh từ Hà Nội uy tín, trọn gói giá rẻ, phục vụ 24/7.</p>
                 <div class="social-links">
                     <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
                     <a href="#"><i class="fa-brands fa-youtube"></i></a>
@@ -456,7 +685,8 @@
                 <h4>Liên Kết Nhanh</h4>
                 <ul class="footer-links">
                     <li><a href="#home">Trang Chủ</a></li>
-                    <li><a href="#services">Bảng Giá</a></li>
+                    <li><a href="#services">Bảng Giá Sân Bay</a></li>
+                    <li><a href="#inter-province">Xe Liên Tỉnh</a></li>
                     <li><a href="#why-us">Ưu Điểm</a></li>
                     <li><a href="#steps">Quy Trình</a></li>
                 </ul>
@@ -467,9 +697,10 @@
                 <ul class="footer-links">
                     <li><a href="#home">Xe taxi Hà Nội đi Nội Bài</a></li>
                     <li><a href="#home">Xe taxi đón Nội Bài về Hà Nội</a></li>
-                    <li><a href="#home">Cho thuê xe riêng 5 chỗ cốp rộng</a></li>
-                    <li><a href="#home">Cho thuê xe SUV 7 chỗ</a></li>
-                    <li><a href="#home">Cho thuê xe du lịch 16 chỗ</a></li>
+                    <li><a href="#inter-province">Xe Hà Nội đi Hải Phòng</a></li>
+                    <li><a href="#inter-province">Xe Hà Nội đi Quảng Ninh</a></li>
+                    <li><a href="#inter-province">Xe Hà Nội đi Ninh Bình</a></li>
+                    <li><a href="#inter-province">Xe Hà Nội đi Nam Định</a></li>
                 </ul>
             </div>
 
@@ -478,31 +709,19 @@
                 <ul class="contact-info">
                     <li>
                         <i class="fa-solid fa-phone"></i>
-                        <div>
-                            <span>Hotline 24/7:</span>
-                            <strong><a href="tel:0355146637">035.514.6637</a></strong>
-                        </div>
+                        <div><span>Hotline 24/7:</span><strong><a href="tel:0355146637">035.514.6637</a></strong></div>
                     </li>
                     <li>
                         <i class="fa-solid fa-envelope"></i>
-                        <div>
-                            <span>Email:</span>
-                            <a href="mailto:info@noibaiconnect.vn">info@noibaiconnect.vn</a>
-                        </div>
+                        <div><span>Email:</span><a href="mailto:info@noibaiconnect.vn">info@noibaiconnect.vn</a></div>
                     </li>
                     <li>
                         <i class="fa-solid fa-location-dot"></i>
-                        <div>
-                            <span>Văn phòng Hà Nội:</span>
-                            <span>Khuất Duy Tiến, Thanh Xuân, Hà Nội</span>
-                        </div>
+                        <div><span>Văn phòng Hà Nội:</span><span>Khuất Duy Tiến, Thanh Xuân, Hà Nội</span></div>
                     </li>
                     <li>
                         <i class="fa-solid fa-location-dot"></i>
-                        <div>
-                            <span>Văn phòng Nội Bài:</span>
-                            <span>Sảnh T1 Sân Bay Nội Bài, Sóc Sơn, Hà Nội</span>
-                        </div>
+                        <div><span>Văn phòng Nội Bài:</span><span>Sảnh T1 Sân Bay Nội Bài, Sóc Sơn, Hà Nội</span></div>
                     </li>
                 </ul>
             </div>
@@ -533,16 +752,14 @@
     <div class="modal-overlay" id="confirm-modal">
         <div class="modal-card">
             <div class="modal-close-btn" id="modal-close"><i class="fa-solid fa-xmark"></i></div>
-            <div class="modal-icon">
-                <i class="fa-solid fa-circle-check"></i>
-            </div>
+            <div class="modal-icon"><i class="fa-solid fa-circle-check"></i></div>
             <h2>ĐẶT XE THÀNH CÔNG!</h2>
-            <p>Cảm ơn bạn đã lựa chọn NoiBai Connect. Yêu cầu đặt xe sân bay của bạn đã được tiếp nhận.</p>
+            <p>Cảm ơn bạn đã lựa chọn NoiBai Connect. Yêu cầu đặt xe của bạn đã được tiếp nhận.</p>
             
             <div class="modal-details">
                 <h4>Chi tiết chuyến xe:</h4>
                 <ul>
-                    <li><span>Hành trình:</span> <strong id="modal-detail-route">Hà Nội <=> Nội Bài</strong></li>
+                    <li><span>Hành trình:</span> <strong id="modal-detail-route">Hà Nội ⇄ Nội Bài</strong></li>
                     <li><span>Dòng xe:</span> <strong id="modal-detail-type">Xe 5 chỗ cốp rộng</strong></li>
                     <li><span>Lịch trình:</span> <strong id="modal-detail-time">22/06/2026 - 08:00</strong></li>
                     <li><span>Mã chuyến bay:</span> <strong id="modal-detail-flight">-</strong></li>
